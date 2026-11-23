@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Laptops | Student Laptop Finder</title>
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="theme-battery">
+
+    <header class="border-b border-gray-200 bg-white px-6 py-4">
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+            <a href="index.html" class="text-xl font-bold">
+                Student Laptop Finder
+            </a>
+
+            <nav class="hidden gap-6 md:flex">
+                <a href="index.html">Home</a>
+                <a href="laptops.html">Catalogue</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="compare.html">Compare</a>
+            </nav>
+
+            <div class="flex gap-3">
+                <button id="themeToggle" class="btn-action">
+                    Switch Theme
+                </button>
+
+                <button id="menuToggle" class="rounded-lg border px-3 py-2 md:hidden">
+                    Menu
+                </button>
+            </div>
+        </div>
+
+        <nav id="mobileMenu" class="mt-4 hidden flex-col gap-3 md:hidden">
+            <a href="index.html">Home</a>
+            <a href="laptops.html">Catalogue</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="compare.html">Compare</a>
+        </nav>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 py-10">
+
+        <h1 class="section-title">Compare Laptops</h1>
+
+        <p class="mb-6">
+            Select 2 to 4 laptops from your favorites to compare their specifications.
+        </p>
+
+        <section id="compareChoices" class="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="animate-pulse rounded-2xl bg-gray-200 p-8">
+                Loading laptops...
+            </div>
+        </section>
+
+        <p id="compareMessage" class="mb-6 font-semibold"></p>
+
+        <section id="comparisonTable" class="overflow-x-auto">
+        </section>
+
+    </main>
+
+    <footer class="mt-12 border-t border-gray-200 px-6 py-6 text-center">
+        Student Laptop Finder
+    </footer>
+
+    <script type="module" src="./src/js/compare-page.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites | Student Laptop Finder</title>
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="theme-battery">
+
+    <header class="border-b border-gray-200 bg-white px-6 py-4">
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+            <a href="index.html" class="text-xl font-bold">
+                Student Laptop Finder
+            </a>
+
+            <nav class="hidden gap-6 md:flex">
+                <a href="index.html">Home</a>
+                <a href="laptops.html">Catalogue</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="compare.html">Compare</a>
+            </nav>
+
+            <div class="flex gap-3">
+                <button id="themeToggle" class="btn-action">
+                    Switch Theme
+                </button>
+
+                <button id="menuToggle" class="rounded-lg border px-3 py-2 md:hidden">
+                    Menu
+                </button>
+            </div>
+        </div>
+
+        <nav id="mobileMenu" class="mt-4 hidden flex-col gap-3 md:hidden">
+            <a href="index.html">Home</a>
+            <a href="laptops.html">Catalogue</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="compare.html">Compare</a>
+        </nav>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 py-10">
+
+        <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+            <div>
+                <h1 class="section-title">My Favorite Laptops</h1>
+                <p>Keep track of the laptops you like.</p>
+            </div>
+
+            <button id="clearFavorites" class="rounded-xl border border-red-500 px-5 py-2.5 font-semibold text-red-600 hover:bg-red-50">
+                Clear All Favorites
+            </button>
+        </div>
+
+        <section class="mb-8 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border bg-white p-5">
+                <p class="text-sm text-gray-500">Favorite Laptops</p>
+                <p id="favoriteCount" class="mt-2 text-2xl font-bold">0</p>
+            </div>
+
+            <div class="rounded-2xl border bg-white p-5">
+                <p class="text-sm text-gray-500">Total Price</p>
+                <p id="totalPrice" class="mt-2 text-2xl font-bold">0</p>
+            </div>
+
+            <div class="rounded-2xl border bg-white p-5">
+                <p class="text-sm text-gray-500">Average Price</p>
+                <p id="averagePrice" class="mt-2 text-2xl font-bold">0</p>
+            </div>
+        </section>
+
+        <section id="favoritesContainer" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="animate-pulse rounded-2xl bg-gray-200 p-10">
+                Loading favorites...
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-12 border-t border-gray-200 px-6 py-6 text-center">
+        Student Laptop Finder
+    </footer>
+
+    <script type="module" src="./src/js/favorites.js"></script>
+
+</body>
+</html>

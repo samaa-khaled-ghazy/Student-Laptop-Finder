@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Laptop Finder | Catalogue</title>
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body class="theme-battery min-h-screen">
+
+    <header class="border-b border-gray-200 bg-white shadow-sm">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5">
+
+            <a href="index.html" class="text-xl font-extrabold text-green-700">
+                LaptopFinder<span class="text-orange-500">.</span>
+            </a>
+
+            <button
+                id="menu-toggle"
+                class="rounded-lg border px-3 py-2 md:hidden"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <div id="nav-menu" class="hidden absolute left-0 top-16 z-20 w-full flex-col gap-4 bg-white p-5 shadow-lg md:static md:flex md:w-auto md:flex-row md:items-center md:bg-transparent md:p-0 md:shadow-none">
+
+                <a href="index.html" class="text-gray-600 hover:text-green-700">Home</a>
+                <a href="laptops.html" class="font-semibold text-green-700">Catalogue</a>
+                <a href="favorites.html" class="text-gray-600 hover:text-green-700">Favorites</a>
+                <a href="compare.html" class="text-gray-600 hover:text-green-700">Compare</a>
+
+                <button id="theme-toggle" class="btn-action" type="button">
+                    Switch Theme
+                </button>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-5 py-10">
+
+        <section class="mb-10">
+            <h1 class="text-4xl font-extrabold">
+                Laptop Catalogue
+            </h1>
+
+            <p class="mt-3 text-gray-500">
+                Find the right laptop for your needs and budget.
+            </p>
+        </section>
+
+        <section class="mb-8 rounded-2xl bg-white p-6 shadow-sm">
+
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+                <div>
+                    <label for="search-input" class="mb-2 block font-semibold">
+                        Search
+                    </label>
+
+                    <input
+                        id="search-input"
+                        type="search"
+                        placeholder="Search name or brand..."
+                        class="w-full rounded-xl border border-gray-300 p-3"
+                    >
+                </div>
+
+                <div>
+                    <label for="category-filter" class="mb-2 block font-semibold">
+                        Category
+                    </label>
+
+                    <select id="category-filter" class="w-full rounded-xl border border-gray-300 p-3">
+                        <option value="all">All Categories</option>
+                        <option value="ultrabook">Ultrabook</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="2-in-1">2-in-1</option>
+                        <option value="creator">Creator</option>
+                        <option value="budget">Budget</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="max-price" class="mb-2 block font-semibold">
+                        Maximum Price
+                    </label>
+
+                    <input
+                        id="max-price"
+                        type="number"
+                        min="0"
+                        placeholder="Maximum EGP"
+                        class="w-full rounded-xl border border-gray-300 p-3"
+                    >
+                </div>
+
+                <div>
+                    <label for="min-ram" class="mb-2 block font-semibold">
+                        Minimum RAM
+                    </label>
+
+                    <select id="min-ram" class="w-full rounded-xl border border-gray-300 p-3">
+                        <option value="0">Any RAM</option>
+                        <option value="8">8 GB</option>
+                        <option value="16">16 GB</option>
+                        <option value="32">32 GB</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="mt-5 grid gap-5 sm:grid-cols-2">
+
+                <div>
+                    <label for="sort-select" class="mb-2 block font-semibold">
+                        Sort By
+                    </label>
+
+                    <select id="sort-select" class="w-full rounded-xl border border-gray-300 p-3">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="battery-asc">Battery: Low to High</option>
+                        <option value="battery-desc">Battery: High to Low</option>
+                        <option value="weight-asc">Weight: Light to Heavy</option>
+                        <option value="weight-desc">Weight: Heavy to Light</option>
+                    </select>
+                </div>
+
+                <div class="flex items-end">
+                    <button id="reset-filters" class="btn-action w-full" type="button">
+                        Reset Filters
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="mb-6 flex items-center justify-between">
+            <p id="result-count" class="font-semibold text-gray-600">
+                Loading laptops...
+            </p>
+        </div>
+
+        <section
+            id="laptops-container"
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+        </section>
+
+    </main>
+
+    <footer class="mt-12 border-t border-gray-200 bg-white px-5 py-8 text-center text-sm text-gray-500">
+        © 2026 Student Laptop Finder
+    </footer>
+
+    <script type="module" src="./src/js/laptops.js"></script>
+
+</body>
+</html>
